@@ -12,12 +12,11 @@ inner_diameters=[(90-2*5,4),(110-2*6,6),(125-2*7,4),(160-2*9,5),(180-2*10,7),(20
                  (225-2*13,4),(250-2*14,8),(315-2*18,7),(355-2*21,1),(400-2*23,7),(450-2*26,7),
                  (500-2*29,7),(560-2*33,2),(630-2*37,4),(710-2*42,1),(800-2*47,4)]
 
-nominal_diameter=0
-i=0
+i = 0
+while True:
+    if nominal_diameters[i] <= calc_diameter <= nominal_diameters[i + 1]:
+        nominal_diameter = nominal_diameters[i]
+        break
+    i = i + 1
 
-while nominal_diameters[i]<=calc_diameter<=nominal_diameters[i+1]:
-    nominal_diameter=nominal_diameters[i]
-    i=i+1
 print(nominal_diameter)
-
-#real_speed=(4*flow)/((math.pi)*(inner_diameter))
